@@ -68,13 +68,7 @@ def process_file(csv_file, thread_count, region_code, shift_radius, check_tik_na
     print "\t Check input data structure..."
     if not checker.check(csv_file, check_tik_names):
             return
-    print "\t Check tik ids..."
-    if not checker.check_tik_ids(csv_file, check_tik_names):
-            return
-    print "\t Check uik ids..."
-    if not checker.check_uik_ids(csv_file):
-            return
-    print "\t Check uik addr_v..."
+    print "\t Check addr_v..."
     if not checker.check_addr_v(csv_file):
             return
     print "\t Convert to sqlite..."
