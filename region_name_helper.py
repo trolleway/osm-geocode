@@ -144,7 +144,12 @@ class RegionNameHelper():
         data_source.ExecuteSQL('PRAGMA synchronous=0')
         data_source.ExecuteSQL('PRAGMA cache_size=100000')
         
-        layer = data_source[0]
+        try:
+            layer = data_source[0]
+        except IndexError as err:
+            self.__show_err('no layer in internal sqlite DB' + unicode(gdal.GetLastErrorMsg(), _message_encoding))
+            return 
+
 
         #wtf??? if not reading - very slow
         layer.ResetReading()

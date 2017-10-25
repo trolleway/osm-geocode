@@ -53,7 +53,7 @@ class Converter():
         output_layer = output_data_source.CreateLayer(layer_name.encode('utf-8'), srs=wgs_sr, geom_type=ogr.wkbPoint,
                                                       options=['ENCODING=UTF-8'])
 
-        #copy fields
+        print 'copy fields'
         input_data_source = ogr.Open(csv_file.encode('utf-8'))
         csv_layer = input_data_source[0]
 
@@ -66,7 +66,7 @@ class Converter():
                 self.__show_err("Unable to create a field %s!" % field_def.GetNameRef())
                 return
 
-        #add geocoder additional fields
+        print 'add geocoder additional fields'
         if not self.add_additional_fields(output_layer):
             return
 
