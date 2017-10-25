@@ -24,7 +24,7 @@ _message_encoding = locale.getdefaultlocale()[1]
 
     
 class DataStructureChecker():
-    req_fields = ['uik',  'addr_v', 'tik_id']
+    req_fields = ['addr_v']
     add_fields = ['tik']
     
     def check_csv_exists(self, csv_file_path):
