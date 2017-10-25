@@ -30,7 +30,7 @@ def argparser_prepare():
     class PrettyFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
         max_help_position = 35
         
-    parser = argparse.ArgumentParser(description='Process and geocode UIC tables',   
+    parser = argparse.ArgumentParser(description='Geocode csv tables, one file or folder. Specs: addres in field "addr_v"',   
                                      formatter_class=PrettyFormatter)
     parser.add_argument('source', type=str,
                         help='file or directory path for processing')
